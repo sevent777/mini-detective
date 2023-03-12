@@ -1,6 +1,5 @@
 import Player from './player/index';
 import BackGround from './runtime/background';
-import GameInfo from './runtime/gameinfo';
 import Music from './runtime/music';
 import DataBus from './databus';
 
@@ -11,7 +10,6 @@ const databus = new DataBus();
  * 游戏主函数
  */
 export default class Main {
-  gameinfo: GameInfo;
   player: Player;
   bg: BackGround;
   music: Music;
@@ -21,14 +19,15 @@ export default class Main {
   }
 
   restart() {
-    const a = 1;
     databus.reset();
 
     this.bg = new BackGround(ctx);
     this.player = new Player();
-    this.gameinfo = new GameInfo();
     this.music = new Music();
     this.render();
+    setTimeout(() => {
+      this.render();
+    }, 2000);
   }
 
   /**
@@ -40,10 +39,6 @@ export default class Main {
 
     this.bg.render(ctx);
 
-    databus.bullets.concat(databus.enemys).forEach((item) => {
-      item.drawToCanvas(ctx);
-    });
-
     this.player.drawToCanvas(ctx);
 
     databus.animations.forEach((ani) => {
@@ -51,7 +46,5 @@ export default class Main {
         ani.aniRender(ctx);
       }
     });
-
-    this.gameinfo.renderGameScore(ctx, databus.score);
   }
 }

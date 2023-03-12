@@ -14,7 +14,6 @@
 │   └── index.js                           // 玩家类
 ├── runtime
 │   ├── background.js                      // 背景类
-│   ├── gameinfo.js                        // 用于展示分数和结算界面
 │   └── music.js                           // 全局音效管理器
 ├── databus.js                             // 管控游戏状态
 └── main.js                                // 游戏入口主函数
