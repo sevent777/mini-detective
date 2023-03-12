@@ -21,6 +21,7 @@ export default class Main {
   }
 
   restart() {
+    const a = 1;
     databus.reset();
 
     this.bg = new BackGround(ctx);
