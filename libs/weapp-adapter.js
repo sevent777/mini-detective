@@ -1,3 +1,9 @@
+/* eslint-disable no-self-assign */
+/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable no-undef */
+/* eslint-disable no-mixed-spaces-and-tabs */
+/* eslint-disable prettier/prettier */
+
 /** *** */ (function (modules) { // webpackBootstrap
 /** *** */ 	// The module cache
 /** *** */ 	const installedModules = {}

@@ -10,31 +10,25 @@ export default class Sprite {
   visible: boolean;
 
   constructor(imgSrc = '', width = 0, height = 0, x = 0, y = 0) {
-    this.img = new Image()
-    this.img.src = imgSrc
+    this.img = new Image();
+    this.img.src = imgSrc;
 
-    this.width = width
-    this.height = height
+    this.width = width;
+    this.height = height;
 
-    this.x = x
-    this.y = y
+    this.x = x;
+    this.y = y;
 
-    this.visible = true
+    this.visible = true;
   }
 
   /**
    * 将精灵图绘制在canvas上
    */
   drawToCanvas(ctx: CanvasRenderingContext2D) {
-    if (!this.visible) return
+    if (!this.visible) return;
 
-    ctx.drawImage(
-      this.img,
-      this.x,
-      this.y,
-      this.width,
-      this.height
-    )
+    ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
 
   /**
@@ -43,14 +37,16 @@ export default class Sprite {
    * @param{Sprite} sp: Sptite的实例
    */
   isCollideWith(sp: Sprite) {
-    const spX = sp.x + sp.width / 2
-    const spY = sp.y + sp.height / 2
+    const spX = sp.x + sp.width / 2;
+    const spY = sp.y + sp.height / 2;
 
-    if (!this.visible || !sp.visible) return false
+    if (!this.visible || !sp.visible) return false;
 
-    return !!(spX >= this.x
-              && spX <= this.x + this.width
-              && spY >= this.y
-              && spY <= this.y + this.height)
+    return !!(
+      spX >= this.x &&
+      spX <= this.x + this.width &&
+      spY >= this.y &&
+      spY <= this.y + this.height
+    );
   }
 }

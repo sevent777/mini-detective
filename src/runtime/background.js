@@ -1,11 +1,11 @@
-import Sprite from '../base/sprite'
+import Sprite from '../base/sprite';
 
-const screenWidth = window.innerWidth
-const screenHeight = window.innerHeight
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
 
-const BG_IMG_SRC = 'images/bg.jpg'
-const BG_WIDTH = 512
-const BG_HEIGHT = 512
+const BG_IMG_SRC = 'images/bg.jpg';
+const BG_WIDTH = 512;
+const BG_HEIGHT = 512;
 
 /**
  * 游戏背景类
@@ -13,17 +13,17 @@ const BG_HEIGHT = 512
  */
 export default class BackGround extends Sprite {
   constructor(ctx) {
-    super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT)
+    super(BG_IMG_SRC, BG_WIDTH, BG_HEIGHT);
 
-    this.top = 0
+    this.top = 0;
 
-    this.render(ctx)
+    this.render(ctx);
   }
 
   update() {
-    this.top += 2
+    this.top += 2;
 
-    if (this.top >= screenHeight) this.top = 0
+    if (this.top >= screenHeight) this.top = 0;
   }
 
   /**
@@ -43,7 +43,7 @@ export default class BackGround extends Sprite {
       -screenHeight + this.top,
       screenWidth,
       screenHeight
-    )
+    );
 
     ctx.drawImage(
       this.img,
@@ -55,6 +55,6 @@ export default class BackGround extends Sprite {
       this.top,
       screenWidth,
       screenHeight
-    )
+    );
   }
 }
