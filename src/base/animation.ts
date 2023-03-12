@@ -16,7 +16,7 @@ export default class Animation extends Sprite {
   interval: number;
   index: number;
   count: number;
-  imgList: string[];
+  imgList: HTMLImageElement[];
   constructor(imgSrc, width, height) {
     super(imgSrc, width, height);
 
